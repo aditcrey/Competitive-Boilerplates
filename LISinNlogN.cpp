@@ -1,13 +1,8 @@
-    void patience(vector<int> &piles, int a){
-        
+    void patience(vector<int> &piles, int a){ //does patience sort
         auto it = lower_bound(piles.begin(),piles.end(),a);
         if(it == piles.end()) piles.push_back(a);
-        else piles[it - piles.begin()] = a;
-        
+        else piles[it - piles.begin()] = a; 
     }
-    
-    
-    
     int lengthOfLIS(vector<int>& nums) {
         int n=nums.size();
         if(n==0) return 0;
