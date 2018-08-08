@@ -1,3 +1,5 @@
+//======================================================WITH LIST AND ARRAY OF LIST POINTERS======================================
+
 void firstElementStream(vector<char> &stream){
     int n = stream.size();
     list<char> lst;
@@ -27,5 +29,29 @@ void firstElementStream(vector<char> &stream){
     }
     
 
+    cout<<endl;
+}
+
+
+
+
+//==================================================================WITH QUEUE==========================================
+
+void firstNonRepeatingChar(vector<char> &stream){
+    vector<int> count(256,0);
+    queue<char> q;
+    int n= stream.size();
+    for(int i=0;i<n;i++){
+        char x = stream[i];
+        count[x]++;
+        if(count[x]==1) q.push(x);
+        while(!q.empty()){
+            if(count[q.front()]>1) q.pop();
+            else break;
+        }
+        if(q.empty()) cout<<-1<<" ";
+        else cout<<q.front()<<" ";
+    }
+    
     cout<<endl;
 }
