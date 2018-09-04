@@ -12,8 +12,7 @@ void KMPSearch(string pat, string txt){
             j++;i++;
         }else{
             if(j!=0) j=lps[j-1];
-            else lps[i]==0;
-            i++;
+            else {lps[i]==0; i++;}
         }
     }
     //=======Pattern Matching Using LPS
